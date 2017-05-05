@@ -34,6 +34,8 @@ router.put("/led", function(req, res, next){
 	pi.setPwmDutycycle(R_PIN,R_VAL)
 	pi.setPwmDutycycle(G_PIN,G_VAL)
 	pi.setPwmDutycycle(B_PIN,B_VAL)
+
+	return res.sendStatus(200);
 	
 });
 
