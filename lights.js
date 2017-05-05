@@ -18,12 +18,12 @@ pi.connect('127.0.0.1', 8888, function(e){
 
 router.put("/led", function(req, res, next){
 
-	var r = req.body.r;
-	var g = req.body.g;
-	var b = req.body.b;
+	var r = Number.parseInt(req.body.r);
+	var g = Number.parseInt(req.body.g);
+	var b = Number.parseInt(req.body.b);
 
 	if(!checkColor(r) || !checkColor(g) || !checkColor(b)){
-		res.send(400);
+		res.sendStatus(400);
 		return next();
 	}
 
